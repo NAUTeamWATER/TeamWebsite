@@ -1,0 +1,648 @@
+/*
+* ----------------------------------------------------------------------------------------
+Author       : John Sadie
+Version      : 1.0
+* ----------------------------------------------------------------------------------------
+*/
+
+/*
+* ----------------------------------------------------------------------------------------
+* GLOBAL STYLE
+* ----------------------------------------------------------------------------------------
+*/
+
+body {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 24px;
+    height: 100%;
+    font-family: 'Lato', sans-serif;
+    background: #fff;
+    color: rgba(0, 0, 0, .6);
+}
+
+html,
+body {
+    height: 100%
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {}
+
+a {
+    text-decoration: none;
+    -webkit-transition: all 0.4s;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+img {
+    max-width: 100%;
+}
+
+a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+p {
+    line-height: 28px;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset {
+    border: 0 none;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.no-padding {
+    padding: 0
+}
+
+.section-padding {
+    padding-top: 70px;
+    padding-bottom: 78px;
+}
+
+.section-title {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.section-title h2 {
+    font-size: 40px;
+    text-transform: capitalize;
+    margin: 0;
+    font-weight: 400;
+    font-style: italic;
+}
+
+a.read-more {
+    margin-top: 20px;
+    display: inline-block;
+    color: #333;
+    padding: 10px 25px;
+    border: 1px solid #F7F7F7;
+    text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 30px;
+    background: #F7F7F7;
+}
+
+a.read-more:hover {
+    background: #202020;
+    color: #fff;
+    -webkit-transition: .3s;
+    transition: .3s;
+    border: 1px solid #202020;
+}
+
+.scrollup {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    line-height: 40px;
+    cursor: pointer;
+    display: none;
+    z-index: 2;
+    background: #000;
+}
+
+.scrollup:hover {
+    box-shadow: 0 3px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* PRELOADER & BOUNCE CCS STYLE
+* ----------------------------------------------------------------------------------------
+*/
+
+.preloader-area {
+    position: fixed;
+    background: #fff;
+    z-index: 11000;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.spinner {
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    margin-left: -20px;
+    top: 50%;
+    -webkit-animation: sk-rotate 2.0s infinite linear;
+    animation: sk-rotate 2.0s infinite linear;
+}
+
+.dot1,
+.dot2 {
+    width: 60%;
+    height: 60%;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    background-color: #000;
+    border-radius: 100%;
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.dot1 {
+    background-color: #ccc;
+}
+
+.dot2 {
+    top: auto;
+    background-color: #000;
+    bottom: 0;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-rotate {
+    100% {
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@keyframes sk-rotate {
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg)
+    }
+}
+
+@-webkit-keyframes sk-bounce {
+    0%,
+    100% {
+        -webkit-transform: scale(0.0)
+    }
+    50% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes sk-bounce {
+    0%,
+    100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* HOMEPAGE CSS STYLE
+* ----------------------------------------------------------------------------------------
+*/
+
+.landing-area {
+    height: 100%;
+}
+
+.landing-image-area {
+    position: relative;
+    height: 100%;
+    background: url(../images/bg/bg.jpg);
+    background-size: cover;
+    z-index: 1;
+}
+
+.landing-image-area:after {
+    position: absolute;
+    background: rgba(0, 0, 0, .6);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: -1;
+}
+
+#background-effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+
+.display-table {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.display-table-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.header-text {
+    margin-top: 160px;
+}
+
+.header-text h2 {
+    color: #fff;
+    font-size: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+
+.header-text p {
+    color: #fafafa;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.header-image {
+    margin-top: 50px;
+}
+
+.header-image img {
+    width: 350px;
+}
+
+.video-area-text h2 {
+    color: #fafafa;
+    font-size: 16px;
+    display: inline-block;
+    margin-left: 12px;
+}
+
+.video-area-text i {
+    font-size: 20px;
+    border: 1px solid #fafafa;
+    color: #fafafa;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    line-height: 40px;
+    text-align: center;
+    padding-left: 6px;
+}
+
+.mfp-iframe-holder {
+    padding-top: 80px;
+}
+
+.header-top-area {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+    -webkit-transition: all 0.4s ease-out;
+    transition: all 0.4s ease-out;
+}
+
+.logo {
+    padding-top: 40px;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.logo a {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.mainmenu .navbar-nav li a {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 40px 15px;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+.mainmenu .navbar-nav li a:hover {
+    background: none;
+    color: #fff;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.nav li a:focus,
+.nav li a:hover {
+    background: none;
+    color: #fff;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.navbar {
+    margin: 0;
+}
+
+.menu-bg {
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    background: #f7f7f7;
+}
+
+.menu-bg .logo {
+    padding-top: 30px;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+
+.menu-bg .logo a {
+    color: #202020;
+}
+
+.menu-bg .mainmenu .navbar-nav li a {
+    color: #202020;
+    padding: 30px 15px;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+.menu-bg .mainmenu .navbar-nav li a:hover {
+    color: #000;
+}
+
+.landing-page-area:after {
+    position: absolute;
+    background: rgba(0, 0, 0, .5);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: -1;
+}
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* DETAILS CSS STYLE
+* ----------------------------------------------------------------------------------------
+*/
+
+.details-area {}
+
+.project-details {
+    margin-top: 30px;
+    padding: 30px;
+    text-align: center;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+.details-active {
+    box-shadow: 0px 0px 70px rgba(29, 24, 24, 0.09);
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+.project-details h4 {
+    font-size: 22px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    color: #333;
+}
+
+.details-icon i {
+    font-size: 40px;
+    color: #000;
+}
+
+.project-details p {
+    margin-bottom: 0;
+    color: #333;
+}
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* Middle Section CSS
+* ----------------------------------------------------------------------------------------
+*/
+
+.center-details-area {}
+
+.center-text {
+    margin-top: 90px;
+}
+
+.center-text h2 {
+    text-transform: capitalize;
+    font-size: 40px;
+}
+
+.center-text h3 {
+    color: #202020;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+a.download-button {
+    margin: 0px 5px;
+    display: inline-block;
+    color: #000;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    font-size: 12px;
+    border: 1px solid #F7F7F7;
+    border-radius: 30px;
+    margin-top: 20px;
+    background: #F7F7F7;
+}
+
+a.download-button i {
+    font-size: 20px;
+    margin-right: 5px;
+    color: #000;
+}
+
+a.download-button:hover.download-button i {
+    margin-left: 5px;
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+
+
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* COMPLETE PROJECT CSS STYLE
+* ----------------------------------------------------------------------------------------
+*/
+
+.complete-project-area {}
+
+.results-complete {
+    background: #fff;
+    text-align: center;
+    padding: 30px;
+}
+
+.results-complete i {
+    font-size: 30px;
+    color: #000;
+}
+
+.results-complete h2 {
+    font-size: 21px;
+    margin: 15px 0px;
+    font-weight: 700;
+}
+
+.results-complete h6 {
+    font-size: 22px;
+    text-transform: capitalize;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.complete-active {
+    box-shadow: 0px 0px 70px rgba(29, 24, 24, 0.09);
+    -webkit-transition: .3s;
+    transition: .3s;
+}
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* TEAM CSS STYLE
+* ----------------------------------------------------------------------------------------
+*/
+
+.team-area {}
+
+.water-team {
+    margin-top: 30px;
+}
+
+.water-team img {
+    width: 100%;
+}
+
+.water-team h4 {
+    font-size: 22px;
+    text-transform: capitalize;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.water-team h6 {
+    font-size: 14px;
+    text-transform: capitalize;
+    color: #333;
+    font-style: italic;
+}
+
+.team-description {
+    background: #F7F7F7;
+    text-align: center;
+    padding: 15px 0px;
+}
+
+
+
+
+/*
+* ----------------------------------------------------------------------------------------
+* DOWNLOAD CSS STYLE
+* ----------------------------------------------------------------------------------------
+*/
+
+.download-area {
+    background-size: cover;
+    padding: 180px 0px;
+    position: relative;
+    z-index: 1;
+}
+
+.download-area:after {
+    position: absolute;
+    background: rgba(0, 0, 0, .5);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: -1;
+}
+
+.download-text h2 {
+    text-transform: capitalize;
+    color: #fff;
+    font-size: 40px;
+    letter-spacing: 3px;
+    margin-bottom: 30px;
+    font-weight: 300;
+}
+
+.download-text img {
+    margin: 0px 10px;
+}
+
+
+.btn.active.focus,
+.btn.active:focus,
+.btn.focus,
+.btn.focus:active,
+.btn:active:focus,
+.btn:focus {
+    outline: none;
+}
+
+
+.main h2 {
+    color: #000;
+}
+
+.main {
+    margin-bottom: 180px;
+}
